@@ -1,9 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
 
-function Header() {
-  return (
+class Header extends Component {
+  /* FUNCTIONALITY FOR LOGIN BUTTON */
+  handleEvent = event => {
+    alert("I was clicked");
+  };
+  render() {
+    return (
     <React.Fragment>
       <header>
         <nav className="navbar">
@@ -19,7 +24,7 @@ function Header() {
                 </a>
               </div>
               <li>
-                <button className="login-btn">Login </button>
+                <button className="login-btn" onClick={this.handleEvent}>Login</button>
               </li>
             </ul>
           </div>
@@ -29,5 +34,5 @@ function Header() {
     </React.Fragment>
   );
 }
-
+}
 export default Header;
